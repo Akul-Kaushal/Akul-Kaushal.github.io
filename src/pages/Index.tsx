@@ -44,7 +44,7 @@ const Index = () => {
             
             <div className="hidden md:flex fixed left-6 bottom-0 flex-col items-center gap-6">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Akul-Kaushal" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-slate hover:text-accent1 hover:translate-y-[-5px] transition-all"
@@ -52,7 +52,7 @@ const Index = () => {
               >
                 <Github size={20} />
               </a>
-              <a 
+              {/* <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -60,9 +60,9 @@ const Index = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
+              </a> */}
               <a 
-                href="mailto:hello@example.com"
+                href="mailto:akulkaushal.main@gmail.com"
                 className="text-slate hover:text-accent1 hover:translate-y-[-5px] transition-all"
                 aria-label="Email"
               >

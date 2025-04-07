@@ -17,7 +17,7 @@ const Footer = () => {
           
           <div className="flex space-x-6 mb-6 md:mb-0">
             <a
-              href="https://github.com"
+              href="https://github.com/Akul-Kaushal"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate hover:text-accent1 transition-colors"
@@ -25,7 +25,7 @@ const Footer = () => {
             >
               <Github size={20} />
             </a>
-            <a
+            {/* <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -33,9 +33,9 @@ const Footer = () => {
               aria-label="LinkedIn"
             >
               <Linkedin size={20} />
-            </a>
+            </a> */}
             <a
-              href="mailto:hello@example.com"
+              href="mailto:akulkaushal.main@gmail.com"
               className="text-slate hover:text-accent1 transition-colors"
               aria-label="Email"
             >
@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-navy-light mt-8 pt-8 text-center text-sm">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
+          <p>&copy; {currentYear} Akul Kaushal. All rights reserved.</p>
         </div>
       </div>
     </footer>
