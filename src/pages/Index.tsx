@@ -74,7 +74,7 @@ const Index = () => {
           
           <a 
             href="#about" 
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-slate hover:text-accent1 transition-colors flex flex-col items-center gap-2"
+            className="absolute bottom left-1/2 transform -translate-x-1/2 text-slate hover:text-accent1 transition-colors flex flex-col items-center gap-2"
             aria-label="Scroll down"
           >
             <span className="text-sm">Scroll Down</span>
