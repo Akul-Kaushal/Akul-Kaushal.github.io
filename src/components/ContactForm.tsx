@@ -8,18 +8,42 @@ const ContactForm = () => {
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     // Simulate form submission
-    setTimeout(() => {
-      toast.success('Your message has been sent!');
-      setName('');
-      setEmail('');
-      setMessage('');
+    // setTimeout(() => {
+    //   toast.success('Your message has been sent!');
+    //   setName('');
+    //   setEmail('');
+    //   setMessage('');
+    //   setIsSubmitting(false);
+    // }, 1500);
+    try {
+      const res = await fetch('http://localhost:8000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        toast.success('Your message has been sent!');
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        toast.error(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -34,7 +58,7 @@ const ContactForm = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="w-full px-4 py-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent1 focus:border-transparent"
-          placeholder="John Doe"
+          placeholder="Your name"
           required
         />
       </div>
@@ -49,7 +73,7 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="w-full px-4 py-3 rounded-md border border-slate-200 focus:outline-none focus:ring-2 focus:ring-accent1 focus:border-transparent"
-          placeholder="john@example.com"
+          placeholder="mail@example.com"
           required
         />
       </div>
@@ -76,6 +100,7 @@ const ContactForm = () => {
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </button>
+
     </form>
   );
 };

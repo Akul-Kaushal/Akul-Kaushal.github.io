@@ -1,26 +1,30 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Contact, Github, Linkedin, Mail } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import SectionTitle from '@/components/SectionTitle';
 import SkillCard from '@/components/SkillCard';
 import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import ParticlesBackground from '@/components/ParticlesBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen relative overflow-hidden">
       <Navbar />
 
       {/* Hero Section */}
       <section 
         id="home" 
-        className="relative min-h-screen flex items-center bg-navy pt-16"
+        className="relative min-h-screen flex items-center pt-16"
       >
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-navy bg-opacity-90"></div>
+        <ParticlesBackground />
+        <div className="absolute inset-0 z-0 overflow-hidden h-full">
+          <div className="absolute inset-0 bg-blue bg-opacity-80"></div>
         </div>
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
+        
+        <div>
           <div className="max-w-4xl">
             <p className="text-accent1 font-medium mb-5 animate-fadeIn">Hello, my name is</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-slate-lighter mb-4 animate-slideUp">
@@ -71,7 +75,7 @@ const Index = () => {
               <div className="h-24 w-px bg-slate"></div>
             </div>
           </div>
-          
+          </div>
           <a 
             href="#about" 
             className="absolute bottom left-1/2 transform -translate-x-1/2 text-slate hover:text-accent1 transition-colors flex flex-col items-center gap-2"
@@ -222,9 +226,11 @@ const Index = () => {
             subtitle="Have a question or want to work together? Feel free to reach out to me using the form below."
             centered
           />
-          
+
           <div className="flex justify-center">
-            <ContactForm />
+            <div className="bg-white dark:bg-gray-900 shadow-xl rounded-2xl p-8 w-full max-w-lg border border-gray-200 dark:border-gray-700">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>
