@@ -1,6 +1,7 @@
 
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SiCredly } from "react-icons/si";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -51,6 +52,14 @@ const Hero = () => {
             </Button> */}
             <Button variant="outline" size="icon" className="hover:scale-110 transition-transform">
               <Mail className="h-5 w-5" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="hover:scale-110 transition-transform"
+              onClick={() => window.open("https://www.credly.com/users/akul-kaushal", "_blank")}
+            >
+              <SiCredly className="h-5 w-5" />
             </Button>
           </div>
 
