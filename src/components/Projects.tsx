@@ -4,7 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 
-const Projects = () => {
+interface ProjectsProps {
+  theme: "light" | "dark";
+}
+
+const Projects = ({ theme }: ProjectsProps) => {
   const projects = [
     {
       title: "AI Voice Assistant",
@@ -62,7 +66,16 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section
+        id="projects"
+        className={`py-20 ${
+          theme === "dark"
+            ? "bg-[rgba(57,255,20,0.02)]"
+            : "bg-[rgba(49,127,230,0.03)]"
+        }`}
+      >
+
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">My Projects</h2>

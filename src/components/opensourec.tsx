@@ -1,6 +1,6 @@
 const OpenSource = () => {
   return (
-    <section id="open-source" className="py-20 bg-muted/20">
+    <section id="open-source" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">

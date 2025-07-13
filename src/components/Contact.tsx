@@ -8,7 +8,12 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone, Send, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const Contact = () => {
+interface ContactProps {
+  theme: "light" | "dark";
+}
+
+const Contact = ({ theme }: ContactProps) => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -112,7 +117,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20">
+    <section
+        id="contact"
+        className="py-20"
+        style={{
+          backgroundColor:
+            theme === "dark"
+              ? "rgba(57, 255, 20, 0.02)"   // subtle green tint
+              : "rgba(49, 127, 230, 0.03)",  // subtle blue tint
+        }}
+      >
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>

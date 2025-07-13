@@ -123,11 +123,11 @@ const Index = () => {
 
       <main className="relative z-10">
         <Hero />
-        <About />
+        <About theme={theme as "light" | "dark"}/>
         <Skills />
-        <Projects />
+        <Projects theme={theme as "light" | "dark"} />
         <OpenSource />
-        <Contact />
+        <Contact theme={theme as "light" | "dark"} />
       </main>
     </div>
   );

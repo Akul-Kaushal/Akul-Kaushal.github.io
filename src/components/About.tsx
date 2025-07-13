@@ -2,7 +2,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Coffee, Lightbulb, Users } from "lucide-react";
 
-const About = () => {
+interface AboutProps {
+  theme: string;
+}
+
+const About = ({ theme }: AboutProps) => {
+
   const highlights = [
     {
       icon: Code,
@@ -27,7 +32,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section
+          id="about"
+          className="py-20"
+          style={{
+            backgroundColor:
+              theme === "dark"
+              ? "rgba(55, 255, 20, 0.02)" // subtle neon green tint
+              : "rgba(49, 127, 230, 0.03)" // subtle teal/blue tint
+          }}
+        >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
