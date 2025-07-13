@@ -9,6 +9,7 @@ import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import OpenSource from "@/components/opensourec";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -127,6 +128,7 @@ const Index = () => {
         <About />
         <Skills />
         <Projects />
+        <OpenSource />
         <Contact />
       </main>
     </div>
