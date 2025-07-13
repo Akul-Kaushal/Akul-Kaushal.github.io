@@ -80,10 +80,10 @@ const Index = () => {
           },
           particles: {
             color: {
-              value: "#3b82f6",
+              value: "#0033feff",
             },
             links: {
-              color: "#3b82f6",
+              color: "#3c7de5ff",
               distance: 150,
               enable: true,
               opacity: 0.2,
