@@ -1,32 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 
 interface NavigationProps {
   activeSection: string;
+  theme: string;
+  setTheme: (theme: string) => void;
 }
 
-const Navigation = ({ activeSection }: NavigationProps) => {
+const Navigation = ({ activeSection, theme, setTheme }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "light";
-    }
-    return "light";
-  });
-
-  useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   const navItems = [
@@ -59,7 +44,9 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`transition-colors duration-300 hover:text-primary ${
-                  activeSection === item.id ? "text-primary" : "text-muted-foreground"
+                  activeSection === item.id
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {item.label}
@@ -99,7 +86,9 @@ const Navigation = ({ activeSection }: NavigationProps) => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block w-full text-left py-2 transition-colors duration-300 hover:text-primary ${
-                  activeSection === item.id ? "text-primary" : "text-muted-foreground"
+                  activeSection === item.id
+                    ? "text-primary"
+                    : "text-muted-foreground"
                 }`}
               >
                 {item.label}
@@ -113,3 +102,4 @@ const Navigation = ({ activeSection }: NavigationProps) => {
 };
 
 export default Navigation;
+        
