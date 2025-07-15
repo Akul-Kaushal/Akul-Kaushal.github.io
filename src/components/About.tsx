@@ -57,15 +57,7 @@ const About = ({ theme }: AboutProps) => {
             
             <p className="text-lg text-muted-foreground leading-relaxed">
               My passion extends into cybersecurity, where I explore buffer overflows, PE code injection, and vulnerability testing using tools like WSL, Docker, and Raspberry Pi. 
-              I enjoy hands-on experimentation with networks, VLANs, and deep learning, and have also contributed to the 
-              <a 
-                href="https://github.com/OWASP/www-community" 
-                className="text-primary underline ml-1"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                OWASP www-community project
-              </a>.
+              I enjoy hands-on experimentation with networks, VLANs, and deep learning.
             </p>
 
 
